@@ -1,0 +1,99 @@
+/* ==========================================================================
+   Public Interest Incubator — shared styles
+   Edit the variables below to change the site's colors and fonts.
+   ========================================================================== */
+
+:root {
+  --color-primary: #1f5f8b;
+  --color-primary-dark: #154466;
+  --color-accent: #f2a541;
+  --color-text: #1d2733;
+  --color-muted: #5b6875;
+  --color-bg: #ffffff;
+  --color-bg-alt: #f4f7fa;
+  --color-border: #dde3e9;
+  --font-body: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-heading: Georgia, "Times New Roman", serif;
+  --max-width: 1100px;
+  --radius: 8px;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: var(--color-text);
+  background: var(--color-bg);
+}
+
+h1, h2, h3 { font-family: var(--font-heading); line-height: 1.25; }
+a { color: var(--color-primary); }
+img { max-width: 100%; height: auto; }
+
+.container { max-width: var(--max-width); margin: 0 auto; padding: 0 1.25rem; }
+
+.skip-link { position: absolute; left: -999px; }
+.skip-link:focus { left: 1rem; top: 1rem; background: #fff; padding: .5rem 1rem; z-index: 100; }
+
+/* ---------- Header & navigation ---------- */
+.site-header { background: var(--color-bg); border-bottom: 1px solid var(--color-border); position: sticky; top: 0; z-index: 10; }
+.site-header .container { display: flex; align-items: center; justify-content: space-between; min-height: 64px; }
+.logo { font-family: var(--font-heading); font-weight: bold; font-size: 1.25rem; color: var(--color-text); text-decoration: none; }
+.nav-toggle { display: none; background: none; border: 1px solid var(--color-border); border-radius: var(--radius); padding: .4rem .7rem; font-size: 1rem; cursor: pointer; }
+.site-nav ul { list-style: none; display: flex; gap: 1.5rem; margin: 0; padding: 0; }
+.site-nav a { text-decoration: none; color: var(--color-text); font-weight: 500; }
+.site-nav a:hover, .site-nav a[aria-current="page"] { color: var(--color-primary); border-bottom: 2px solid var(--color-accent); }
+
+@media (max-width: 760px) {
+  .nav-toggle { display: block; }
+  .site-nav { display: none; position: absolute; top: 64px; left: 0; right: 0; background: var(--color-bg); border-bottom: 1px solid var(--color-border); }
+  .site-nav.open { display: block; }
+  .site-nav ul { flex-direction: column; gap: 0; padding: .5rem 1.25rem 1rem; }
+  .site-nav li { padding: .5rem 0; }
+}
+
+/* ---------- Sections ---------- */
+.hero { background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark)); color: #fff; padding: 5rem 0; }
+.hero h1 { font-size: clamp(2rem, 5vw, 3.2rem); margin: 0 0 1rem; }
+.hero p { font-size: 1.2rem; max-width: 640px; }
+.page-header { background: var(--color-bg-alt); padding: 3rem 0 2rem; border-bottom: 1px solid var(--color-border); }
+.page-header h1 { margin: 0 0 .5rem; }
+.page-header p { margin: 0; color: var(--color-muted); }
+.section { padding: 3.5rem 0; }
+.section.alt { background: var(--color-bg-alt); }
+
+.btn { display: inline-block; padding: .75rem 1.5rem; border-radius: var(--radius); background: var(--color-accent); color: var(--color-text); font-weight: 600; text-decoration: none; border: none; cursor: pointer; font-size: 1rem; }
+.btn:hover { filter: brightness(.95); }
+.btn.secondary { background: transparent; color: #fff; border: 2px solid #fff; margin-left: .5rem; }
+
+/* ---------- Cards & grids ---------- */
+.grid { display: grid; gap: 1.5rem; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+.card { background: var(--color-bg); border: 1px solid var(--color-border); border-radius: var(--radius); padding: 1.5rem; }
+.card h3 { margin-top: 0; }
+
+.event { display: grid; grid-template-columns: 90px 1fr; gap: 1.25rem; align-items: start; }
+.event-date { background: var(--color-primary); color: #fff; border-radius: var(--radius); text-align: center; padding: .6rem 0; font-weight: bold; }
+.event-date .month { display: block; font-size: .85rem; text-transform: uppercase; letter-spacing: .05em; }
+.event-date .day { display: block; font-size: 1.8rem; line-height: 1.1; }
+.event h3 { margin: 0 0 .25rem; }
+.event-meta { color: var(--color-muted); font-size: .95rem; margin: 0 0 .5rem; }
+
+.staff-card { text-align: center; }
+.staff-photo { width: 140px; height: 140px; border-radius: 50%; object-fit: cover; background: var(--color-bg-alt); border: 1px solid var(--color-border); display: block; margin: 0 auto 1rem; }
+.staff-role { color: var(--color-primary); font-weight: 600; margin: 0 0 .5rem; }
+
+/* ---------- Forms ---------- */
+.form { max-width: 680px; }
+.form-row { margin-bottom: 1.25rem; }
+.form label { display: block; font-weight: 600; margin-bottom: .35rem; }
+.form input, .form select, .form textarea { width: 100%; padding: .65rem .75rem; border: 1px solid var(--color-border); border-radius: var(--radius); font: inherit; }
+.form input:focus, .form select:focus, .form textarea:focus { outline: 2px solid var(--color-primary); border-color: var(--color-primary); }
+.form .hint { font-size: .9rem; color: var(--color-muted); }
+.form-notice { padding: 1rem; border-radius: var(--radius); background: #fff6e5; border: 1px solid var(--color-accent); margin-top: 1rem; }
+
+/* ---------- Footer ---------- */
+.site-footer { background: var(--color-text); color: #cfd6dd; padding: 2.5rem 0; font-size: .95rem; }
+.site-footer a { color: #fff; }

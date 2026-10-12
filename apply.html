@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Apply | Public Interest Incubator</title>
+  <meta name="description" content="Apply to participate in Public Interest Incubator.">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="container">
+      <a class="logo" href="index.html">Public Interest Incubator</a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav">Menu</button>
+      <nav class="site-nav" id="site-nav" aria-label="Main">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="mission.html">Mission</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="team.html">Our Team</a></li>
+        <li><a href="apply.html" aria-current="page">Apply</a></li>
+      </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="page-header">
+      <div class="container">
+        <h1>Apply to Participate</h1>
+        <p>Tell us about yourself and the project you want to build.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <!-- Replace YOUR_FORM_ID with your form service endpoint. See README.md. -->
+        <form class="form" data-apply-form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+          <div class="form-row">
+            <label for="name">Full name</label>
+            <input id="name" name="name" type="text" autocomplete="name" required>
+          </div>
+          <div class="form-row">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" autocomplete="email" required>
+          </div>
+          <div class="form-row">
+            <label for="phone">Phone <span class="hint">(optional)</span></label>
+            <input id="phone" name="phone" type="tel" autocomplete="tel">
+          </div>
+          <div class="form-row">
+            <label for="organization">Organization or project name <span class="hint">(optional)</span></label>
+            <input id="organization" name="organization" type="text">
+          </div>
+          <div class="form-row">
+            <label for="track">How would you like to participate?</label>
+            <select id="track" name="track" required>
+              <option value="">Choose one</option>
+              <option>Join a cohort with my project</option>
+              <option>Volunteer</option>
+              <option>Become a mentor</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="form-row">
+            <label for="project">Tell us about your idea or interest</label>
+            <textarea id="project" name="project" rows="6" required></textarea>
+            <p class="hint">What problem are you working on, and who does it help?</p>
+          </div>
+          <div class="form-row">
+            <label for="referral">How did you hear about us? <span class="hint">(optional)</span></label>
+            <input id="referral" name="referral" type="text">
+          </div>
+          <button class="btn" type="submit">Submit application</button>
+          <p id="form-notice" class="form-notice" role="status" hidden></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p><strong>Public Interest Incubator</strong> &middot; A nonprofit organization</p>
+      <p>Contact: <a href="mailto:hello@example.org">hello@example.org</a></p>
+      <p>&copy; 2026 Public Interest Incubator. All rights reserved.</p>
+    </div>
+  </footer>
+  <script src="js/main.js"></script>
+</body>
+</html>
